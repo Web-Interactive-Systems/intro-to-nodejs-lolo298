@@ -10,3 +10,5 @@ const secret = (name) => {
  Todo: 
   Create an export default of `hello`
  */
+
+module.exports = hello;

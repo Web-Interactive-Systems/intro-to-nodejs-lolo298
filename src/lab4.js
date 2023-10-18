@@ -9,9 +9,28 @@
 
 const fs = require("fs");
 
-const filename = process.argv; // Todo;
-const text = process.argv; // Todo;
+const filename = process.argv[2]; // Todo;
+const text = process.argv[3]; // Todo;
+
+if (!filename) {
+  console.error("Please pass a file path");
+  process.exit(1);
+}
 
 // Todo writeFile
-
+if (text) {
+  fs.writeFileSync(filename, text, {
+    encoding: "utf-8",
+    flag: "w",
+  });
+  console.log("data Written to file");
+}
 // Todo readFile
+else {
+  if (!fs.existsSync(filename)) {
+    console.error("Le fichier n'existe pas");
+    process.exit(1);
+  }
+  const data = fs.readFileSync(filename, "utf-8");
+  console.log(data);
+}

@@ -12,3 +12,12 @@ const baz = "baz";
  - create an export of foo and bar
  - create an export of baz
  */
+
+module.exports = {
+  foo,
+  bar,
+  baz,
+};
+// exports.foo = foo;
+// exports.bar = bar;
+// exports.baz = baz;
